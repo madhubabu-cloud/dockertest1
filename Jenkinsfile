@@ -26,7 +26,7 @@ pipeline {
 
         stage('Deploy to Docker Host') {
             steps  {
-          sh 'docker -H tcp://3.109.108.228:2375 stop webapp2 '
+          sh 'docker -H tcp://3.109.108.228:2375 stop webapp2'
           sh 'docker -H tcp://3.109.108.228:2375 run --rm -dit --name webapp2 --hostname webapp2 -p 9005:80  madhudev/pipelinetest:v4'
            }
         } 
